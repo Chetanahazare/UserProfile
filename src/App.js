@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layout, Avatar, Card, Menu } from 'antd';
+import { Layout, Avatar, Card, Menu, message } from 'antd';
 import {
   UserOutlined,
   SettingOutlined,
@@ -17,6 +17,12 @@ function App() {
 
   const handleAvatarClick = () => {
     setIsCardVisible(!isCardVisible);
+  };
+
+  const handleLogout = () => {
+    // Handle logout logic here (e.g., clearing session)
+    message.success('Logged out successfully!');
+    // Redirect or perform any other necessary actions here
   };
 
   return (
@@ -53,7 +59,7 @@ function App() {
                   Help Center
                 </Menu.Item>
                 <Menu.Divider />
-                <Menu.Item key="logout" icon={<LogoutOutlined />}>
+                <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={handleLogout}>
                   Logout
                 </Menu.Item>
               </Menu>
