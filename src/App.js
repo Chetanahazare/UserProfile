@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Avatar, message } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import './App.css';
@@ -35,6 +35,25 @@ function App() {
     }
   };
 
+  // Fetch all subjects when the component mounts
+  useEffect(() => {
+    const fetchAllSubjects = async () => {
+      try {
+        const response = await fetch(`https://gloster.onrender.com/api/subjects/all`);
+        if (response.ok) {
+          const data = await response.json();
+          setSearchResults(data);
+        } else {
+          message.error('Error fetching subjects');
+        }
+      } catch (error) {
+        message.error('An error occurred while fetching subjects');
+      }
+    };
+
+    fetchAllSubjects();
+  }, []);
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Header className="navbar" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', paddingRight: '20px' }}>
@@ -50,7 +69,7 @@ function App() {
       <Content style={{ padding: '50px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <h1>Welcome! You Can Search Required Course Here 🔍🔎</h1>
         {isCardVisible && <ProfilePage onLogout={handleLogout} />}
-        
+
         {/* Displaying search results */}
         <div style={{ marginTop: '20px' }}>
           {searchResults.length > 0 ? (
