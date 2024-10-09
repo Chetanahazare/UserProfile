@@ -1,43 +1,40 @@
-import React from 'react';
-import { Card, Menu } from 'antd';
-import {
-  UserOutlined,
-  SettingOutlined,
-  QuestionCircleOutlined,
-  LogoutOutlined,
-  AppstoreAddOutlined,
-  FileTextOutlined,
-} from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Layout, Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import './App.css';
+import ProfilePage from './ProfilePage';
 
-const ProfilePage = ({ onLogout }) => {
+const { Header, Content } = Layout;
+
+function App() {
+  const [isCardVisible, setIsCardVisible] = useState(false);
+
+  const handleAvatarClick = () => {
+    setIsCardVisible(!isCardVisible);
+  };
+
+  const handleLogout = () => {
+    console.log('User logged out');
+    setIsCardVisible(false); // Close the profile card on logout
+  };
+
   return (
-    <div className="profile-card" style={{ position: 'fixed', right: '20px', top: '70px' }}>
-      <Card style={{ width: 300, borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-        <Menu mode="vertical" selectable={false}>
-          <Menu.Item key="profile" icon={<UserOutlined />}>
-            Profile
-          </Menu.Item>
-          <Menu.Item key="integrations" icon={<AppstoreAddOutlined />}>
-            Integrations
-          </Menu.Item>
-          <Menu.Item key="settings" icon={<SettingOutlined />}>
-            Settings
-          </Menu.Item>
-          <Menu.Divider />
-          <Menu.Item key="guide" icon={<FileTextOutlined />}>
-            Guide
-          </Menu.Item>
-          <Menu.Item key="help-center" icon={<QuestionCircleOutlined />}>
-            Help Center
-          </Menu.Item>
-          <Menu.Divider />
-          <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={onLogout}>
-            Logout
-          </Menu.Item>
-        </Menu>
-      </Card>
-    </div>
-  );
-};
+    <Layout style={{ minHeight: '100vh' }}>
+      <Header className="navbar" style={{ display: 'flex', justifyContent: 'flex-end', paddingRight: '20px' }}>
+        <Avatar
+          size="large"
+          icon={<UserOutlined />}
+          onClick={handleAvatarClick}
+          style={{ cursor: 'pointer' }}
+        />
+      </Header>
 
-export default ProfilePage;
+      <Content style={{ padding: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <h1>Welcome to User Profile 👤</h1>
+        {isCardVisible && <ProfilePage onLogout={handleLogout} />}
+      </Content>
+    </Layout>
+  );
+}
+
+export default App;
