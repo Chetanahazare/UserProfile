@@ -1,9 +1,6 @@
-/* App.css */
-.profile-card {
-  position: fixed;
-  top: 70px; /* Align with the avatar */
-  right: 20px; /* Distance from the right side of the page */
-  z-index: 10; /* Ensure the card appears above other elements */
+body {
+  font-family: Arial, sans-serif;
+
 }
 
 .navbar {
@@ -12,4 +9,126 @@
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px;
+}
+.logo {
+  font-size: 24px; /* Adjust the size of the logo text */
+  font-weight: bold; /* Make the logo text bold */
+  color: #f0f3f5; /* Logo text color */
+  display: flex; /* Use flex to align it properly */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+
+
+/* Content Styles */
+.content {
+  margin-left: 0%;
+  text-align: center;
+}
+
+/* Quality Education Circle Styles */
+.quality-circle {
+  position: relative;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  background-color: white;
+  border-radius: 50%; /* Makes it a complete circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px; /* Adjust padding to fit both texts */
+  text-align: center;
+  width: 250px; /* Set a fixed width for the circle */
+  height: 250px; /* Set a fixed height for the circle */
+  line-height: 1.5; /* Set line-height for better spacing between text */
+}
+
+.quality-text {
+  font-size: 18px; /* Font size for quality text */
+  font-weight: bold;
+  color: #1890ff; /* Color for the quality text */
+  max-width: fit-content;
+}
+
+.empowering-text {
+  font-size: 14px; /* Font size for empowering text */
+  color: #555; /* Secondary text color */
+  line-height: 1.5; /* Increase line height for readability */
+  margin-top: 10px; /* Margin above the empowering text */
+  margin-bottom: 20px; /* Margin below the empowering text */
+}
+
+
+
+
+
+/* Stats Box Styles */
+.stats-container {
+  background-color: #beb0f547; /* Blue background color for the container */
+  border-radius: 10px; /* Rounded corners for the container */
+  padding: 8px; /* Padding inside the container */
+  height: 130px !important;
+  width: 80%; /* Reduced width of the container */
+  max-width: 1200px; /* Maximum width to prevent it from getting too large */
+  display: flex;
+  justify-content: space-around; /* Center-align the content */
+  align-items: center;
+  /* margin: 5px auto; Center the container on the page */
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  box-shadow: 0 4px 10px #cdcccce8;
+}
+
+
+.stats-box {
+  /* White background for individual stats boxes */
+   /* Rounded corners for the stats box */
+   /* Subtle shadow for depth */
+  padding: 15px; /* Padding inside the stats box */
+  width: 150px; /* Adjust the width for a more compact size */
+  text-align: center; /* Center text alignment */
+  margin: 10px; /* Margin between each box */
+  margin-left: 70px;
+  margin-right: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* Stack the text vertically */
+ 
+}
+.new{
+  height: 50px;
+  width: 80px;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0 4px 10px #cdcccce8;
+  border-radius: 10px;
+  cursor: pointer;
+}
+ .new2{
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Stack the text horizontally */
+  margin-left: 20px;
+ }
+ .new2 h1{
+  color: blue;
+  margin-top: 0px;
+  margin-bottom: 0px;
+ }
+ .course{
+  color: #555555;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-weight: 400;
+ }
+
+.stats-box Text {
+  font-size: 14px; /* Adjust the font size for the description */
+  color: #555555; /* Text color for better readability */
 }
