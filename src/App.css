@@ -42,12 +42,20 @@ body {
 }
 
 .quality-text {
-  font-size: 18px; /* Font size for quality text */
+  font-size: 30px; /* Font size for quality text */
   font-weight: bold;
   color: #1890ff; /* Color for the quality text */
-  max-width: fit-content;
+  overflow: visible;
+  width: 100%; 
+  position: absolute;
+  margin-top: 0%;
+  margin: 0;
+  padding: 0;
 }
-
+.qua1{
+  color: violet !important;
+  overflow: visible;
+}
 .empowering-text {
   font-size: 14px; /* Font size for empowering text */
   color: #555; /* Secondary text color */
@@ -131,4 +139,30 @@ body {
 .stats-box Text {
   font-size: 14px; /* Adjust the font size for the description */
   color: #555555; /* Text color for better readability */
+}
+
+.man_img{
+  margin-top: 50px;
+  margin-left: 60px;
+  max-width: 100%;
+}
+
+
+.main{
+  margin-top: 0%;
+  margin-left: 250px;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.empowering-text{
+  margin-top: 100px;
+  overflow: visible;
+  width: 500px;
+  position: relative;
+  z-index: 3;
+  margin-left: 0px;
+  text-align: left;
 }

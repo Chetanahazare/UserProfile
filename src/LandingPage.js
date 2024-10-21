@@ -32,11 +32,13 @@ const LandingPage = () => {
       <Content style={{padding: '30px', backgroundColor: '#ffffff' }}>
   <Row justify="center" align="middle" gutter={[16, 16]}>
     <Col xs={24} md={12} style={{ textAlign: 'center' }}>
+    <div className='main'>
+        <h1 className="quality-text"><span class="qua1"><br />Quality</span> Education <br /> Made <span class="qua1">Easy</span>  & <br /> Accessible</h1><br></br>
+        </div>
       <div className="quality-circle">
-        <span className="quality-text">Quality Education Made Easy</span><br></br>
-        <Text className="empowering-text">
-          Empowering You with the Latest Online Learning System & Resources to Fuel Your Knowledge Growth
-        </Text>
+        <p className="empowering-text">
+          Empowering You with the Latest Online Learning System & <br /> Resources to Fuel Your Knowledge Growth
+        </p>
       </div>
       <div style={{ marginTop: '5px' }}>
         <Button type="primary" size="large" style={{ marginRight: '10px' }}>Get Started</Button>
@@ -44,7 +46,7 @@ const LandingPage = () => {
       </div>
     </Col>
     <Col xs={24} md={12}>
-      <img src="/lp.png" alt="Education Illustration" style={{ maxWidth: '200%' }} />
+      <img src="/lp.png" alt="Education Illustration" style={{ maxWidth: '200%' }} class="man_img" />
     </Col>
   </Row>
 
